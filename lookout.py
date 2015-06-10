@@ -2,7 +2,7 @@
 
 PORT = 9890
 
-import flask, os, sys, time, psutil, json, socket
+import flask, os, sys, time, psutil, json, socket, subprocess
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
@@ -24,6 +24,13 @@ def raw():
 	return flask.Response(
 		json.dumps(stats.copy()),
 		mimetype='application/json'
+	)
+
+@app.route('/screenfetch')
+def screenfetch():
+	return flask.Response(
+		subprocess.check_output("screenfetchhtml"),
+		mimetype='text/html'
 	)
 
 def update(stats):

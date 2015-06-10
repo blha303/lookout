@@ -6,6 +6,11 @@ Lightweight, web-based server monitoring.
 The Python backend uses Flask and Tornado to serve JSON data thanks to psutil,
 while the frontend uses Smoothie Charts for the live graphs.
 
+What's this fork?
+-----------------
+
+I added a screenfetch output to it, using the two scripts in the bin directory. See it in action at http://stats.blha303.biz
+
 What does it look like?
 -----------------------
 
